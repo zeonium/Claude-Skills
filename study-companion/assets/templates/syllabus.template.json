@@ -1,0 +1,51 @@
+{
+  "notebook_id": "{{notebook_id}}",
+  "total_weeks": 6,
+  "daily_minutes": 45,
+  "version": 1,
+  "generated_at": "{{generated_at}}",
+  "weeks": [
+    {
+      "week_number": 1,
+      "theme": "{{chapter_1_title}}",
+      "days": [
+        {
+          "day_number": 1,
+          "section_ids": ["{{section_id}}"],
+          "materials": ["summary", "mindmap", "flashcards"],
+          "estimated_minutes": 45,
+          "is_review_day": false
+        },
+        {
+          "day_number": 2,
+          "section_ids": ["{{section_id}}"],
+          "materials": ["examples", "socratic", "application"],
+          "estimated_minutes": 45,
+          "is_review_day": false
+        },
+        {
+          "day_number": 3,
+          "section_ids": ["{{section_id}}"],
+          "materials": ["assessment", "reflection", "crossref"],
+          "estimated_minutes": 45,
+          "is_review_day": false
+        },
+        {
+          "day_number": 7,
+          "section_ids": [],
+          "materials": ["reflection"],
+          "estimated_minutes": 45,
+          "is_review_day": true
+        }
+      ]
+    }
+  ],
+  "milestones": [
+    {
+      "milestone_id": "ms-week1",
+      "title": "Week 1 Mastery",
+      "after_week": 1,
+      "assessment_n_items": 15
+    }
+  ]
+}
