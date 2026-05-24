@@ -1,0 +1,49 @@
+{
+  "skill_name": "financial-analysis",
+  "evals": [
+    {
+      "id": 1,
+      "name": "mode-a-quick-scan-with-provided-numbers",
+      "prompt": "다음 데이터로 재무비율 분석해줘.\n- 업종: IT/소프트웨어 (Tech)\n- 매출 1,200억원\n- 영업이익 180억원\n- 순이익 144억원\n- 총자산 960억원\n- 자기자본 600억원\n- 유동자산 380억원\n- 유동부채 160억원\n- 총부채 360억원\n- 재고 40억원\n- 매출채권 110억원\n- 이자비용 8억원\n- 영업활동현금흐름 165억원",
+      "expected_output": "Mode A (Quick Scan) 1페이지 대시보드 형식. 5대 축 핵심 지표를 ⭐등급으로 판정(Tech 업종 벤치마크 적용). 3줄 요약(강점/약점/종합) + 주의 포인트 + 추천 다음 단계 포함. 적정주가 등 위임 대상은 언급만.",
+      "assertions": [
+        { "text": "Mode A 또는 Quick Scan으로 응답하고 시계열 분석을 시도하지 않음", "passed": null, "evidence": "" },
+        { "text": "5대 축(성장·수익·활동·안정·유동) 중 최소 4개 축의 핵심 지표를 계산", "passed": null, "evidence": "" },
+        { "text": "ROE, 영업이익률, 부채비율, 유동비율의 수치가 공식에 맞게 계산됨", "passed": null, "evidence": "" },
+        { "text": "Tech(IT/소프트웨어) 업종 벤치마크 기준으로 ⭐ 등급 부여", "passed": null, "evidence": "" },
+        { "text": "3줄 요약(강점/약점/종합)이 명시적으로 포함됨", "passed": null, "evidence": "" },
+        { "text": "한국어 출력 + 전문용어에 영문약어 병기(예: 자기자본이익률 (ROE))", "passed": null, "evidence": "" }
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "mode-b-deep-ticker-triggered",
+      "prompt": "삼성전자 최근 5년 재무분석을 심층적으로 해줘. Red Flag 체크와 Peer 비교도 포함해서 투자등급을 산정해줘.",
+      "expected_output": "Mode B (Deep Diagnosis) 8섹션 보고서. korea-stock/open-dart-reader/KIS MCP 호출 안내 또는 실제 호출. 5대 축 시계열 / DuPont / ROIC vs WACC / Red Flag 30 / Beneish / Altman / Peer 비교 / 투자등급 A+~D. 최종 면책 조항.",
+      "assertions": [
+        { "text": "Mode B 또는 Deep Diagnosis로 분기되어 시계열(3~5년) 분석 의도를 표현", "passed": null, "evidence": "" },
+        { "text": "한국 상장사이므로 korea-stock 또는 open-dart-reader MCP를 1순위로 지정", "passed": null, "evidence": "" },
+        { "text": "5대 축 시계열, DuPont, 현금흐름, Red Flag 중 최소 3개 섹션 언급", "passed": null, "evidence": "" },
+        { "text": "Red Flag / Beneish M-Score / Altman Z-Score 중 2개 이상 시도", "passed": null, "evidence": "" },
+        { "text": "Peer 비교를 수행하거나 Peer 선정 기준을 제시", "passed": null, "evidence": "" },
+        { "text": "최종 투자등급(A+~D) 부여 및 근거 제시", "passed": null, "evidence": "" },
+        { "text": "면책 조항 또는 투자 참고용임을 명시", "passed": null, "evidence": "" }
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "name": "delegation-routing",
+      "prompt": "삼성전자 적정주가 계산하고 경제적 해자가 뭔지 분석해줘.",
+      "expected_output": "본 스킬은 적정주가(DCF) 및 해자 분석을 직접 수행하지 않고, intrinsic-value-analyzer 및 eco-moat-ai 스킬로 위임 안내. 다만 재무진단은 본 스킬이 제공 가능함을 안내.",
+      "assertions": [
+        { "text": "intrinsic-value-analyzer 스킬로 적정주가 분석 위임을 명시", "passed": null, "evidence": "" },
+        { "text": "eco-moat-ai 스킬로 해자 분석 위임을 명시", "passed": null, "evidence": "" },
+        { "text": "본 스킬이 직접 DCF 밸류에이션을 수행하지 않음 (가치평가 섹션을 자체 생성하지 않음)", "passed": null, "evidence": "" },
+        { "text": "재무진단(재무비율·DuPont·Red Flag 등)은 본 스킬이 제공 가능함을 안내", "passed": null, "evidence": "" }
+      ],
+      "files": []
+    }
+  ]
+}
